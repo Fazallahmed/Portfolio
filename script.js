@@ -43,14 +43,40 @@ document.querySelectorAll('.card').forEach(el => observer.observe(el));
 // Initialize particles on page load
 window.addEventListener('load', createParticles);
 
-// Hamburger Menu Toggle
+// Responsive Mobile Menu
 document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".menu-toggle"); // Corrected class
-    const navLinks = document.querySelector(".nav-links");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", function () {
-            navLinks.classList.toggle("show");
+    if (menuToggle && menu) {
+        menuToggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+            menu.classList.toggle("active");
+
+            // Ensure body overflow is handled to prevent background scrolling
+            document.body.classList.toggle("menu-open", menu.classList.contains("active"));
         });
+
+        document.addEventListener("click", function (event) {
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove("active");
+                document.body.classList.remove("menu-open");
+            }
+        });
+
+        menu.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
+    } else {
+        console.error("Menu or Menu Toggle button not found!");
     }
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.querySelector(".menu-btn"); // Button for menu
+    const navLinks = document.querySelector(".nav-links"); // The menu items
+
+    menuBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active"); // Toggle class on click
+    });
 });
