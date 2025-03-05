@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazal Ahmed - About</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="About Fazal Ahmed - Computer Science graduate and web developer from Rawalpindi, Pakistan">
+    <meta name="theme-color" content="#000a2e">
+</head>
+<body>
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="gradient-bg"></div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section">
+        <div class="card hover-zoom">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>Welcome to My Story</h3>
+                    </div>
+                    <p class="about-description">Motivated and detail-oriented Computer Science graduate with a solid background in programming, problem-solving, and innovative thinking. Passionate about applying my technical expertise to enhance system efficiency and drive innovation. Committed to continuous learning in an ever-evolving technology landscape, I seek opportunities that challenge my skills and foster professional growth.</p>
+                    
+                    <div class="about-details">
+                        <h3><i class="fas fa-info-circle"></i> Personal Information</h3>
+                        <ul class="info-list">
+                            <li>
+                                <i class="fas fa-user"></i>
+                                <span><strong>Name:</strong> Fazal Ahmed</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Location:</strong> Rawalpindi, Punjab, Pakistan</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span><strong>Email:</strong> <a href="mailto:fazalshmed321@gmail.com" class="email-link">fazalshmed321@gmail.com</a></span>
+                            </li>
+                        </ul>
+
+                        <h3><i class="fas fa-trophy"></i> Key Achievements</h3>
+                        <ul class="achievements-list">
+                            <li>
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Computer Scientist</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hide loading animation when page is loaded
+        window.addEventListener('load', () => {
+            document.querySelector('.loading').classList.add('hide');
+        });
+
+        // Add smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add parallax effect to background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelector('.gradient-bg').style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>

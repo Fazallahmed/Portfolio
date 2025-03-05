@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazal Ahmed - Contact</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Contact Fazal Ahmed - Computer Science graduate and web developer">
+    <meta name="theme-color" content="#000a2e">
+</head>
+<body>
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="gradient-bg"></div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="contact" class="section">
+        <div class="card">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Feel free to reach out to me through these platforms:</p>
+                </div>
+                <div class="social-links vertical">
+                    <a href="https://www.instagram.com/fazallahmed" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow me on Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>@fazallahmed</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fazal-ahmed-427a94341/" class="social-link" target="_blank" rel="noopener noreferrer" title="Connect with me on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>fazal-ahmed</span>
+                    </a>
+                    <a href="https://www.facebook.com/fazal.ahmed222" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow me on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>fazal.ahmed222</span>
+                    </a>
+                    <a href="mailto:fazalshmed321@gmail.com" class="social-link" title="Send me an email">
+                        <i class="fas fa-envelope"></i>
+                        <span>fazalshmed321@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hide loading animation when page is loaded
+        window.addEventListener('load', () => {
+            document.querySelector('.loading').classList.add('hide');
+        });
+
+        // Add smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
