@@ -112,6 +112,87 @@ nav {
 .nav-links li:last-child a {
     color: #00d8ff;
 }
+/* Base styles for the menu */
+.menu {
+    display: none; /* Hide menu by default */
+    position: absolute;
+    top: 60px; /* Adjust based on header */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Show menu when active */
+.menu.active {
+    display: block;
+}
+
+/* Style the menu toggle button */
+.menu-toggle {
+    display: none; /* Hide toggle by default */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        transition: left 0.3s ease-in-out;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    .menu ul li {
+        margin-bottom: 20px;
+    }
+}
+
 .hero {
     height: 100vh;
     display: flex;
@@ -426,6 +507,12 @@ nav {
     background: var(--accent);
     color: var(--navy);
 }
+.navbar {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+}
+
 .nav-links a.active {
     color: var(--accent);
     position: relative;
@@ -752,6 +839,83 @@ nav {
 
 .nav-links a:hover, .nav-links a.active {
     color: #00d8ff;
+}
+/* Ensure the menu is hidden by default on small screens */
+/* Base styles for the menu */
+.menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Show menu when active */
+.menu.active {
+    display: block;
+}
+
+/* Style the menu toggle button */
+.menu-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        transition: left 0.3s ease-in-out;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    .menu ul li {
+        margin-bottom: 20px;
+    }
 }
 
 .container {
